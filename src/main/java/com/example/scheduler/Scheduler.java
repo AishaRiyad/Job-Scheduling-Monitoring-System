@@ -109,7 +109,10 @@ public class Scheduler implements AutoCloseable {
         } else {
             String err = (lastEx != null) ? (lastEx.getClass().getSimpleName() + ": " + lastEx.getMessage()) : "Unknown error";
             info.isFailure(err);
-            JobResult result = new JobResult(name, start, end, JobStatus.FAILED, null, err, attempt);
+            JobResult result = new JobResult(
+                    name, start, end, JobStatus.FAILED, null, err,
+                    Math.min(attempt, cfg.getMaximumRetries())
+            );
             jobHistory.addResult(result);
             notifyFailure(name, result);
         }
