@@ -6,7 +6,7 @@ The system includes:
 - Job Scheduler Core — Manages job registration, worker threads, scheduling, and status tracking.
 - Job Modules — Defines example jobs (`DataBackupJob`, `LogCleanupJob`, `ReportGeneratorJob`) that run at different intervals.
 - CLI Interface — Provides a simple text-based menu to control and monitor the scheduler in real time.
-- Notification & Logging System** — Prints status updates, job outcomes, and system reports using console output.
+- Notification & Logging System — Prints status updates, job outcomes, and system reports using console output.
 
 How to Run the App:
 Prerequisites:
